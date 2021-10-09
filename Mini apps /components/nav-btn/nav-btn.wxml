@@ -1,0 +1,17 @@
+<view class="resume-btn" style="{{themeObj[theme]}}">
+  <view class="resume-btn-col" wx:for="{{btnList}}" wx:key="index" data-link="{{item.url}}" data-type="{{item.type}}" bindtap="resumeBtnTap">
+    <view wx:if="{{ item.type === 'link' }}">
+      <view class="text-center">
+        <span class="iconfont {{item.icon}}"></span>
+      </view>
+      <view class="top-20 btn-name">{{item.name}}</view>
+    </view>
+    <button wx:else style="{{themeObj[theme]}}" open-type="share">
+      <view class="text-center">
+        <span class="iconfont {{item.icon}}"></span>
+      </view>
+      <view class="top-20 btn-name">{{item.name}}</view>
+    </button>
+  </view>
+</view>
+

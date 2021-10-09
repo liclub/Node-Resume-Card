@@ -1,0 +1,39 @@
+@import '../baseInfo/baseInfo.wxss';
+.addbtn{
+  display: inline-block;
+  padding: 5rpx 20rpx;
+  border-radius: 10rpx;
+  font-size: 26rpx;
+}
+.pdf_box {
+  padding: 20rpx;
+  border-radius: 11rpx;
+  margin: 20rpx 0;
+  background: #fafafa;
+  color: #c8c9c8;
+}
+.pdf_title {
+  font-size: 26rpx;
+}
+
+.pdf_des {
+  font-size: 24rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  border-bottom: 1px solid #fff;
+}
+.pdf_btn {
+  justify-content: left;
+  align-items: center;
+  padding-top: 10rpx;
+}
+.pdf_btn_self {
+  margin-right: 20rpx;
+  font-size: 24rpx;
+  padding-right: 60rpx;
+}
+
+.icon-diandiandian {
+  font-weight: bold;
+  text-align: right;
+}

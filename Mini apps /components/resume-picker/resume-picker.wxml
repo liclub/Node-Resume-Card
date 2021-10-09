@@ -1,0 +1,9 @@
+<van-picker
+  style="--font-weight-bold:normal;--picker-option-font-size:26rpx;--picker-action-font-size:26rpx"
+  show-toolbar
+  title="{{title}}"
+  columns="{{ columns }}"
+  default-index="{{ data_idx }}"
+  bind:cancel="onCancel"
+  bind:confirm="onConfirm"
+/>

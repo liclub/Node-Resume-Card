@@ -1,0 +1,9 @@
+<van-popup
+  show="{{ pop_show }}"
+  close-on-click-overlay
+  position="bottom"
+  custom-style="{{ custom_style }}"
+  bind:click-overlay="closePopup"
+>
+<slot name="popup-slot"></slot>
+</van-popup>

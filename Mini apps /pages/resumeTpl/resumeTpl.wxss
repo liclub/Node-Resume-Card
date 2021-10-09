@@ -1,0 +1,52 @@
+@import '../baseInfo/baseInfo.wxss';
+page {
+  overflow: hidden;
+}
+.bottom_tpl {
+  position: absolute;
+  bottom: 50rpx;
+  left: 0;
+  width: 100%;
+}
+.bottom_tpl image{
+  width: 76px;
+  height: 100px;
+  margin: 0 20rpx;
+}
+.self-basic-info {
+  height: 76%;
+  display: flex;
+  justify-content: top;
+  flex-direction: column;
+  align-items: center;
+}
+.bottom_item {
+  width: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20rpx 0;
+}
+.tpl_img {
+  width: 220px;
+  height: 300px;
+  margin-top: 20rpx;
+}
+
+.save_btn {
+  position: relative;
+  margin: 0 auto;
+  width: 200px;
+  text-align: center;
+  height: 36px;
+  line-height: 36px;
+  border-radius: 15rpx;
+  -webkit-border-radius: 15rpx;
+  -moz-border-radius: 15rpx;
+  -ms-border-radius: 15rpx;
+  -o-border-radius: 15rpx;
+  margin-top: 60rpx;
+  font-size: 26rpx;
+  color: #fff;
+  background: rgb(67,201,116);
+}

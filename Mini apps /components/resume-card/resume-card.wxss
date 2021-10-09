@@ -1,0 +1,73 @@
+
+.resume-head-img {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 100%;
+  margin: 56rpx;
+  margin-bottom: 0;
+}
+
+.resume-card {
+  width: 92%;
+  margin-left: 4%;
+  margin-top: 30rpx;
+  height: 560rpx;
+  border: 1rpx solid #fff;
+  border-radius: 15rpx;
+  flex-direction: column;
+  -webkit-border-radius: 15rpx;
+  -moz-border-radius: 15rpx;
+  -ms-border-radius: 15rpx;
+  -o-border-radius: 15rpx;
+}
+
+.resume-baseInfo {
+  width: 92%;
+  height: 200rpx;
+  margin-left: 4%;
+  border-color: #fff;
+}
+
+.resume-name {
+  display: flex;
+  justify-content: center;
+  align-items: left;
+  flex-direction: column;
+}
+
+.resume-name .name {
+  font-size: 38rpx;
+  margin-top: 40rpx;
+}
+.resume-name .job {
+  font-size: 28rpx;
+  color: #fff;
+  margin-top: 10rpx;
+}
+.van-hairline--bottom:after,
+.van-hairline--surround:after {
+  border-color: #d3d3d3;
+}
+
+.resume-other {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.resume-otherInfo {
+  width: 92%;
+  height: 180rpx;
+  margin-left: 4%;
+  border-color: #fff;
+}
+
+.other-view {
+  font-size: 28rpx;
+}
+
+.end-info {
+  margin-left: 30rpx;
+}

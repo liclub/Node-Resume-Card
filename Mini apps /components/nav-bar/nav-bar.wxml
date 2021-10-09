@@ -1,0 +1,9 @@
+<van-nav-bar 
+  fixed 
+  border= "{{border}}"
+  z-index="99999999"
+  placeholder 
+  left-arrow="{{left_arrow}}"  
+  bind:click-left="onClickLeft"
+  title="{{navTitle}}" 
+  style="{{ themeObj[theme] }}" />

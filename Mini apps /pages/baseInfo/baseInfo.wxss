@@ -1,0 +1,48 @@
+.container {
+  width: 92%;
+  margin-left: 4%;
+}
+
+.slot-title {
+  height: 68rpx;
+  line-height: 68rpx;
+  font-size: 30rpx;
+}
+
+.slot-desc {
+  font-size: 24rpx;
+  color: rgb(125,125,125);
+  padding-bottom: 26rpx;
+}
+
+.self-basic-info {
+  margin-bottom: 50rpx;
+}
+
+.basic-img {
+  width: 70rpx;
+  height: 70rpx;
+  margin-right: 20rpx;
+  border-radius: 100%;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -ms-border-radius: 100%;
+  -o-border-radius: 100%;
+}
+
+.self-label {
+  font-size: 26rpx;
+  flex: 1;
+}
+
+.self-row {
+  justify-content: left;
+  align-items: center;
+  padding: 20rpx 0;
+  height: 70rpx;
+}
+
+.press-canvas {
+  position: absolute;
+  top: -1000px;
+}

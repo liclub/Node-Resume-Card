@@ -1,0 +1,24 @@
+{
+  "setting": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "name": "简历分享",
+          "pathName": "pages/resume/resume",
+          "query": "scene=oN5D70Lig0sSVaVviS-3PnAsK6po",
+          "scene": 1011
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,32 @@
+
+.resume-slot {
+  border: 1px solid #fafafa;
+  border-bottom-left-radius: 15rpx;
+  border-bottom-right-radius: 15rpx;
+  border-top: none;
+  padding-bottom: 10rpx;
+}
+
+.slot-title {
+  padding-left: 24rpx;
+  height: 68rpx;
+  line-height: 68rpx;
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #000 !important;
+}
+
+.slot-desc {
+  font-size: 28rpx;
+  color: #c8c9cc;
+  padding-left: 24rpx;
+  height: 68rpx;
+  line-height: 68rpx;
+}
+
+.slot-detail {
+  font-size: 28rpx;
+  padding-left: 24rpx;
+  line-height: 40rpx;
+  color: #c8c9cc;
+}

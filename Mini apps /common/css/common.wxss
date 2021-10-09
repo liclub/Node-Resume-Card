@@ -1,0 +1,162 @@
+page,
+.page {
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica,
+    Segoe UI, Arial, Roboto, 'PingFang SC', 'miui', 'Hiragino Sans GB', 'Microsoft Yahei',
+    sans-serif;
+  background-color: #fff;
+  font-size: 28rpx;
+  height: 100%;
+}
+
+.flex {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.row {
+  flex-direction: row;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.right {
+  text-align: right
+}
+
+.center {
+  text-align: center
+}
+
+.over {
+  overflow: hidden
+}
+
+
+.clearfix:after,
+.clearfix:before {
+    display: table;
+    content: " ";
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+:after,
+:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+/* 文字效果 */
+.font-through {
+  text-decoration: line-through;
+}
+
+.text-l {
+  text-align: left;
+}
+
+.text-c {
+  text-align: center;
+}
+
+.text-r {
+  text-align: right;
+}
+
+.bottom-line {
+  position: relative;
+}
+.bottom-line:after {
+  position: absolute;
+  box-sizing: border-box;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  content: " ";
+  pointer-events: none;
+  top: -50%;
+  right: -50%;
+  bottom: -50%;
+  left: -50%;
+  -webkit-transform: scale(.5);
+  transform: scale(.5);
+}
+
+.bottom-line-default:after {
+  border-bottom: 1px solid #d6d6d6;
+}
+
+.bottom-line-theme1:after {
+  border-bottom: 1px solid #76ccfb;
+}
+
+.bottom-line-theme2:after {
+  border-bottom: 1px solid #ff8b7e;
+}
+
+.bottom-line-theme3:after {
+  border-bottom: 1px solid #ffaa69;
+}
+
+.bottom-line-theme4:after {
+  border-bottom: 1px solid #6dcc9d;
+}
+
+.container {
+  height: 100%;
+} 
+
+.right-10 {
+  margin-right: 10rpx;
+}
+
+.left-10 {
+  margin-left: 10rpx;
+}
+
+.right-50 {
+  margin-right: 50rpx;
+}
+
+.left-50 {
+  margin-left: 50rpx;
+}
+
+
+.top-10 {
+  margin-top: 10rpx
+}
+
+.top-20 {
+  margin-top: 20rpx
+}
+
+.bottom-20 {
+  margin-bottom: 20rpx
+}
+
+.top-30 {
+  margin-top: 30rpx
+}
+
+.top-50 {
+  margin-top: 50rpx
+}
+
+.text-center {
+  text-align: center;
+}
+
+.van-dialog__header {
+  font-size: 26rpx !important;
+}

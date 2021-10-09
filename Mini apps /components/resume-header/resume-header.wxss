@@ -1,0 +1,31 @@
+.resume-header {
+  width: 92%;
+  margin-left: 4%;
+  border-radius: 15rpx;
+  margin-top: 30rpx;
+  -webkit-border-radius: 15rpx;
+  -moz-border-radius: 15rpx;
+  -ms-border-radius: 15rpx;
+  -o-border-radius: 15rpx;
+}
+
+.header-box {
+  height: 80rpx;
+  line-height: 80rpx;
+  padding-left: 30rpx;
+  font-size: 28rpx;
+  border-top-left-radius: 15rpx;
+  border-top-right-radius: 15rpx;
+}
+.header-box .iconfont {
+  font-size: 45rpx;
+  color: #fff;
+}
+.header-name {
+  flex: 1;
+}
+
+.headerRadius {
+  border-bottom-left-radius: 15rpx;
+  border-bottom-right-radius: 15rpx;
+}

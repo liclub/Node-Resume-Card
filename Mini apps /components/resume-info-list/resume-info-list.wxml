@@ -1,0 +1,65 @@
+<!-- 学历信息 -->
+<view wx:if="{{ type === 'education' && education.length > 0 }}">
+  <view class="education-box" wx:for="{{ education }}" wx:key="index">
+    <view class="flex">
+      <view class="flex-1">{{ item.colleges }}</view>
+      <span class="iconfont icon-diandiandian" data-id="{{ item.id }}" data-index="{{index}}" bindtap="showSheet"></span>
+    </view>
+    <view class="edu-info">
+      {{ item.education }} | {{ item.major }} | {{ item.graduation_at }}毕业
+    </view>
+  </view>
+</view>
+
+<!-- 工作经历 -->
+<view wx:if="{{ type === 'work' && work.length > 0 }}">
+  <view class="education-box" wx:for="{{ work }}" wx:key="index">
+    <view class="flex">
+      <view class="flex-1">{{ item.company_name }}</view>
+      <span class="iconfont icon-diandiandian" data-id="{{ item.id }}" data-index="{{index}}" bindtap="showSheet"></span>
+    </view>
+    <view class="edu-info">
+        {{ item.job }}  | {{ item.entry_at }} 至 {{ item.leave_at }}
+    </view>
+  </view>
+</view>
+
+<view wx:if="{{ type === 'project' && project.length > 0 }}">
+  <view class="education-box" wx:for="{{ project }}" wx:key="index">
+    <view class="flex">
+      <view class="flex-1"> {{item.project_name}} </view>
+      <span class="iconfont icon-diandiandian" data-id="{{ item.id }}" data-index="{{index}}" bindtap="showSheet"></span>
+    </view>
+    <view class="edu-info">
+        {{item.job}}  | {{ item.begin_at }} 至 {{ item.end_at }}
+    </view>
+  </view>
+</view>
+
+<view wx:if="{{ type === 'skill' && skill.length > 0 }}">
+  <view class="education-box" wx:for="{{ skill }}" wx:key="index">
+    <view class="flex">
+      <view class="flex-1">{{item.skill_name}}</view>
+      <span class="iconfont icon-diandiandian" data-id="{{ item.id }}" data-index="{{index}}" bindtap="showSheet"></span>
+    </view>
+    <view class="edu-info">
+      {{item.skill_level}}
+    </view>
+  </view>
+</view>
+
+
+<view wx:if="{{ type === 'certificate' && certificate.length > 0 }}">
+  <view class="education-box" wx:for="{{ certificate }}" wx:key="index">
+    <view class="flex">
+      <view class="flex-1">{{item.certificate_name}}</view>
+      <span class="iconfont icon-diandiandian" data-id="{{ item.id }}" data-index="{{index}}" bindtap="showSheet"></span>
+    </view>
+    <view class="edu-info">
+    </view>
+  </view>
+</view>
+
+<view class="addbtn top-20" style="{{themeObj[theme]}}" bindtap="addEducation">+ 添加{{ btnName }}</view>
+<action-sheet actions="{{ actions }}" sheet_show="{{sheetShow}}" bind:checkSheet="checkSheet" bind:sheetSelect="sheetSelect"></action-sheet>
+<van-dialog id="van-dialog" />

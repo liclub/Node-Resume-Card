@@ -1,0 +1,11 @@
+<van-datetime-picker
+  style="--font-weight-bold:normal;--picker-option-font-size:26rpx;--picker-action-font-size:26rpx"
+  type="date"
+  title="{{ title }}" 
+  show-toolbar
+  value="{{ current_date }}"
+  bind:cancel="onCancel"
+  bind:confirm="onConfirm"
+  min-date="{{ minDate }}"
+  formatter="{{ formatter }}"
+/>

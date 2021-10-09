@@ -1,0 +1,24 @@
+<!--index.wxml-->
+<nav-bar left_arrow="true" theme="{{theme}}" navTitle="模板选择"></nav-bar>
+<view class="container">
+  <view class="slot-title">模板选择</view>
+  <view class="slot-desc van-hairline--bottom">
+    选择要生成的文件的样式。
+  </view>
+  <view class="self-basic-info">
+    <image class="tpl_img" src="{{ checkTpl.tpl_img}}"></image>
+    <view class="save_btn" bindtap="createHtmlToPdf"> 生成简历PDF </view>
+    <view class="flex bottom_tpl">
+      <view class="bottom_item" 
+            wx:for="{{tplList}}" 
+            wx:key="index" 
+            data-idx="{{index}}"
+            data-type ="{{item.tpl_type}}" 
+            style="background:{{checkIdx == index ? '#ccc': ''}}"
+            bindtap="checkTpl">
+        <image src="{{item.tpl_img}}"></image>
+      </view>
+    </view>
+  </view>
+</view>
+<van-toast id="van-toast" />

@@ -1,0 +1,9 @@
+{
+  "component": true,
+  "usingComponents": {
+    "resume-popup": "../resume-popup/resume-popup",
+    "resume-picker": "../resume-picker/resume-picker",
+    "resume-datetime-picker": "../resume-datetime-picker/resume-datetime-picker",
+    "resume-address-picker": "../resume-address-picker/resume-address-picker"
+  }
+}

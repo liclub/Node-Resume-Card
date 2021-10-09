@@ -1,0 +1,35 @@
+<view class="flex resume-card" style="{{themeObj.main[theme]}}">
+  <view class="flex resume-baseInfo bottom-line {{themeObj.bottomLine[theme]}}">
+    <image src="{{head_src}}" class="resume-head-img"></image>
+    <view class="resume-name">
+      <view class="name">{{resume_base.user_name}}</view>
+      <view class="job" style="{{themeObj.other[theme]}}">{{resume_base.job}}</view>
+    </view>
+  </view>
+  <view class="flex resume-otherInfo bottom-line {{themeObj.bottomLine[theme]}}">
+    <view class="resume-other">
+      <view>性别</view>
+      <view class="other-view top-30" style="{{themeObj.other[theme]}}">{{resume_base.sex}}</view>
+    </view>
+    <view class="resume-other">
+      <view>年龄</view>
+      <view class="other-view top-30" style="{{themeObj.other[theme]}}">{{resume_base.age}}</view>
+    </view>
+    <view class="resume-other">
+      <view>学历</view>
+      <view class="other-view top-30" style="{{themeObj.other[theme]}}">{{resume_base.education}}</view>
+    </view>
+    <view class="resume-other">
+      <view>工龄</view>
+      <view class="other-view top-30" style="{{themeObj.other[theme]}}">{{resume_base.work_years}}</view>
+    </view>
+  </view>
+  <view class="flex resume-otherInfo column">
+    <view class="flex row end-info top-50">
+      <view class="other-view" style="{{themeObj.other[theme]}}">坐标：{{resume_base.city}}</view>
+    </view>
+    <view class="end-info top-10">
+      <view class="other-view" style="{{themeObj.other[theme]}}">状态：{{resume_base.job_status}}</view>
+    </view>
+  </view>
+</view>

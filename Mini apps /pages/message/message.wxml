@@ -1,0 +1,11 @@
+<!--index.wxml-->
+<nav-bar left_arrow="true" theme="{{theme}}" navTitle="系统消息"></nav-bar>
+<view class="container">
+  <view class="message-box" wx:for="{{ message }}" wx:key="index">
+    <view class="message-time van-hairline--bottom">{{ item.created_at }}</view>
+    <view class="message-desc">
+      <rich-text nodes="{{ item.message }}"></rich-text>
+    </view>
+  </view>
+</view>
+<van-toast id="van-toast" />

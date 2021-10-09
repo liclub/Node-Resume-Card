@@ -1,0 +1,68 @@
+page {
+  overflow: hidden;
+}
+.container {
+  background: #fafafa;
+  padding-top: 70rpx;
+}
+
+.qr-box {
+  width: 80%;
+  margin-left: 10%;
+  height: 400px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 15rpx;
+  -webkit-border-radius: 15rpx;
+  -moz-border-radius: 15rpx;
+  -ms-border-radius: 15rpx;
+  -o-border-radius: 15rpx;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.head_img {
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
+  margin: 30rpx 0;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -ms-border-radius: 100%;
+  -o-border-radius: 100%;
+}
+
+.qrcode_img {
+  width: 120px;
+  height: 120px;
+  margin: 60rpx 0;
+}
+
+.title {
+  font-weight: bold;
+  margin: 10rpx 0;
+}
+
+.desc {
+  font-size: 26rpx;
+  color: darkgray;
+}
+
+.save_btn {
+  position: relative;
+  margin: 0 auto;
+  width: 200px;
+  text-align: center;
+  height: 36px;
+  line-height: 36px;
+  border-radius: 15rpx;
+  -webkit-border-radius: 15rpx;
+  -moz-border-radius: 15rpx;
+  -ms-border-radius: 15rpx;
+  -o-border-radius: 15rpx;
+  margin-top: 60rpx;
+  font-size: 26rpx;
+  color: #fff;
+  background: rgb(67,201,116);
+}

@@ -1,0 +1,23 @@
+<!--index.wxml-->
+<nav-bar left_arrow="true" theme="{{theme}}" navTitle="{{describe[type].title}}"></nav-bar>
+<canvas class="press-canvas" canvas-id="myCanvas" style='width: {{screenWidth }}px;height: {{ screenHeight }}px;' />
+<view class="container">
+  <view class="slot-title">{{describe[type].itemTitle}}</view>
+  <view class="slot-desc van-hairline--bottom">{{describe[type].des}}</view>
+  <view class="self-basic-info">
+    <resume-info-list wx:if="{{type === 'education'}}" query_list="{{queryList}}" type="education"></resume-info-list>
+    <resume-info-list wx:elif="{{type === 'work'}}" query_list="{{queryList}}" type="work"></resume-info-list>
+    <resume-info-list wx:elif="{{type === 'certificate'}}" query_list="{{queryList}}" type="certificate"></resume-info-list>
+    <resume-info-list wx:elif="{{type === 'project'}}" query_list="{{queryList}}" type="project"></resume-info-list>
+    <resume-info-list wx:elif="{{type === 'skill'}}" query_list="{{queryList}}" type="skill"></resume-info-list>
+    <resume-info theme="{{theme}}" wx:if="{{type === 'basic'}}" type="basic"></resume-info>
+    <resume-info theme="{{theme}}" wx:if="{{type === 'contact'}}" type="contact"></resume-info>
+    <resume-info theme="{{theme}}" wx:if="{{type === 'self'}}" type="self"></resume-info>
+    <resume-info theme="{{theme}}" wx:if="{{type === 'education_edit'}}" pid="{{id}}"  query="{{query}}" type="education_edit"></resume-info>
+    <resume-info theme="{{theme}}" wx:if="{{type === 'project_edit'}}" pid="{{id}}" query="{{query}}"  type="project_edit"></resume-info>
+    <resume-info theme="{{theme}}" wx:if="{{type === 'work_edit'}}"  pid="{{id}}" query="{{query}}"  type="work_edit"></resume-info>
+    <resume-info theme="{{theme}}" wx:if="{{type === 'skill_edit'}}"  pid="{{id}}" query="{{query}}"  type="skill_edit"></resume-info>
+    <resume-info theme="{{theme}}" wx:if="{{type === 'certificate_edit'}}"  pid="{{id}}" query="{{query}}"  type="certificate_edit"></resume-info>
+  </view>
+</view>
+<van-toast id="van-toast" />

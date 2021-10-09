@@ -1,0 +1,7 @@
+<view class="resume-header">
+  <view class="header-box flex {{!slotShow? 'headerRadius' : ''}}" style="{{themeObj[theme]}}" bindtap="slotMode">
+    <view class="header-name">{{title}}</view>
+  <span wx:if="{{ !share_id }}" class="iconfont icon-diandiandian" catchtap="showSheet" style="{{themeObj.text[theme]}}"></span>
+  </view>
+  <slot name="resume-slot" wx:if="{{slotShow}}"></slot>
+</view>

@@ -1,0 +1,13 @@
+<canvas style="width: 572px;height: 800px;margin-top:1500rpx;background:#fff;position: fixed;top: -10000px" canvas-id="shareFrends"></canvas>
+<nav-bar left_arrow="true" theme="{{theme}}" navTitle="简历二维码"></nav-bar>
+<view class="container">
+  <view class="qr-box">
+    <image class="head_img" src="{{ head_src }}"   />
+    <view class="title">{{ resumeBase.user_name }}</view>
+    <view class="desc">{{ resumeBase.job }}</view>
+    <image class="qrcode_img" src="{{ erweima }}" />
+    <view class="desc">扫描二维码查询我的简历</view>
+  </view>
+  <view class="save_btn" bindtap="saveImage"> 保存至手机 </view>
+</view>
+<van-toast id="van-toast" />

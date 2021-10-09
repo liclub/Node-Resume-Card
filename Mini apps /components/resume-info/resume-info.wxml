@@ -1,0 +1,292 @@
+<!-- picker -->
+<resume-popup pop_show="{{ popShow }}" bind:pickerCancel="pickerCancel">
+  <view slot="popup-slot">
+    <resume-picker 
+      data_idx="{{ dataIdx }}"
+      title="{{ pickerTitle }}" 
+      columns="{{ pickerColumns }}" 
+      bind:pickerCancel="pickerCancel" 
+      bind:pickerCheck="pickerCheck">
+  </resume-picker>
+  </view>
+</resume-popup>
+<!-- datepicker -->
+<resume-popup pop_show="{{ datePopShow }}" bind:pickerCancel="pickerCancel">
+  <view slot="popup-slot">
+    <resume-datetime-picker 
+      current_date="{{ current_date }}"
+      title="{{pickerTitle}}"
+      bind:pickerCancel="pickerCancel"
+      bind:pickerCheck="pickerCheck">
+    </resume-datetime-picker>
+  </view>
+</resume-popup>
+<!-- addressPicker -->
+<resume-popup pop_show="{{ addressPopShow }}" bind:pickerCancel="pickerCancel">
+  <view slot="popup-slot">
+    <resume-address-picker 
+      title="{{pickerTitle}}"
+      bind:pickerCancel="pickerCancel" 
+      bind:pickerCheck="pickerCheck">
+    </resume-address-picker>
+  </view>
+</resume-popup>
+<form bindsubmit="saveResume">
+  <!-- 名片展示信息 -->
+  <view wx:if="{{ type === 'basic'}}">
+    <view class="flex van-hairline--bottom self-row" bindtap="chooseImg">
+      <view class="self-label">头像</view>
+      <image class="basic-img" src="{{head_src}}" />
+    </view>
+    <view class="flex van-hairline--bottom self-row">
+      <view class="self-label">姓名</view>
+      <van-field input-align="right" border="{{ false }}" type="text" placeholder="请输入姓名"
+      bind:blur="inputBlur" name="user_name" data-field="user_name" value="{{ basic.user_name }}"  />
+    </view>
+    <view class="flex van-hairline--bottom self-row">
+      <view class="self-label">姓别</view>
+      <van-field readonly is-link input-align="right" border="{{ false }}" type="text" placeholder="请选择性别" 
+      bindtap="pickerSelect" name="sex" data-field="sex" value="{{ basic.sex }}"/>
+    </view>
+    <view class="flex van-hairline--bottom self-row">
+      <view class="self-label">职位</view>
+      <van-field  input-align="right" border="{{ false }}" type="text" placeholder="请输入职位" 
+      bindblur="inputBlur" name="job" data-field="job" value="{{ basic.job }}"/>
+    </view>
+    <view class="flex van-hairline--bottom self-row">
+      <view class="self-label">出生日期</view>
+      <van-field readonly input-align="right" is-link border="{{ false }}" type="text"  placeholder="请选择出生日期"
+      bindtap="pickerSelect" name="birthday" data-field="birthday" value="{{ basic.birthday }}" />
+    </view>
+    <view class="flex van-hairline--bottom self-row">
+      <view class="self-label">最高学历</view>
+      <van-field readonly input-align="right" is-link border="{{ false }}" type="text"  placeholder="请选择学历" 
+      bindtap="pickerSelect" name="education" data-field="education" value="{{ basic.education }}" />
+    </view>
+    <view class="flex van-hairline--bottom self-row">
+      <view class="self-label">工作经验</view>
+      <van-field readonly input-align="right" is-link border="{{ false }}" type="text" placeholder="请输入工作年限" 
+      bindtap="pickerSelect" name="work_years" data-field="work_years" value="{{ basic.work_years }}"/>
+    </view>
+    <view class="flex van-hairline--bottom self-row">
+      <view class="self-label">所在城市</view>
+      <van-field readonly input-align="right" is-link border="{{ false }}" type="text"  placeholder="请选择所在城市" 
+      bindtap="pickerSelect" name="city" data-field="city" value="{{ basic.city }}"/>
+    </view>
+    <view class="flex van-hairline--bottom self-row">
+      <view class="self-label">目前状态</view>
+      <van-field readonly input-align="right" is-link border="{{ false }}" type="text"  placeholder="请选择工作状态" 
+      bindtap="pickerSelect" name="job_status" data-field="job_status" value="{{ basic.job_status }}"/>
+    </view>
+  </view>
+
+  <!-- 联系方式 -->
+  <view wx:if="{{ type === 'contact'}}">
+    <view class="flex van-hairline--bottom self-row">
+      <view class="self-label">电话号码</view>
+      <van-field input-align="right" border="{{ false }}" type="text" placeholder="请输入电话号码"
+      maxlength="11" bind:blur="inputBlur" name="mobile" data-field="mobile" value="{{ contact.mobile }}"  />
+    </view>
+    <view class="flex van-hairline--bottom self-row">
+      <view class="self-label">电子邮箱</view>
+      <van-field input-align="right" border="{{ false }}" type="text" placeholder="请输入电子邮箱"
+      bind:blur="inputBlur" name="email" data-field="email" value="{{ contact.email }}"  />
+    </view>
+    <view class="flex van-hairline--bottom self-row">
+      <view class="self-label">微信</view>
+      <van-field input-align="right" border="{{ false }}" type="text" placeholder="请输入微信号"
+      maxlength="50" bind:blur="inputBlur" name="wechat" data-field="wechat" value="{{ contact.wechat }}"  />
+    </view>
+    <view class="flex van-hairline--bottom self-row">
+      <view class="self-label">QQ</view>
+      <van-field input-align="right" border="{{ false }}" type="text" placeholder="请输入qq号"
+      maxlength="50" bind:blur="inputBlur" name="qq" data-field="qq" value="{{ contact.qq }}"  />
+    </view>
+    <view class="flex van-hairline--bottom self-row">
+      <view class="self-label">微博</view>
+      <van-field input-align="right" border="{{ false }}" type="text" placeholder="请输入微博"
+      maxlength="50" bind:blur="inputBlur" name="weibo" data-field="weibo" value="{{ contact.weibo }}"  />
+    </view>
+  </view>
+
+  <!-- 自我介绍 -->
+  <view class="self-textarea van-hairline--bottom van-hairline--top" wx:if="{{ type === 'self'}}">
+    <van-field
+      style="--field-text-area-min-height: 150px"
+      value="{{ self.introduce }}"
+      name="introduce" 
+      data-field="introduce"
+      type="textarea"
+      bind:blur="inputBlur"
+      placeholder="请输入自我介绍"
+      border="{{ false }}"
+      maxlength="500"
+      show-word-limit
+    />
+  </view>
+  
+  <!-- 学历信息 -->
+  <view wx:if="{{ type === 'education_edit'}}">
+    <view class="flex van-hairline--bottom self-row">
+      <view class="self-label">院校</view>
+      <van-field input-align="right" border="{{ false }}" type="text" placeholder="请输入毕业院校"
+      maxlength="50" bind:blur="inputBlur" name="colleges" data-field="colleges" value="{{ education_edit.colleges }}"  />
+    </view>
+
+    <view class="flex van-hairline--bottom self-row">
+      <view class="self-label">专业</view>
+      <van-field input-align="right" border="{{ false }}" type="text" placeholder="请输入专业"
+      maxlength="50" bind:blur="inputBlur" name="major" data-field="major" value="{{ education_edit.major }}"  />
+    </view>
+
+    <view class="flex van-hairline--bottom self-row">
+      <view class="self-label">学历</view>
+      <van-field readonly input-align="right" is-link border="{{ false }}" type="text"  placeholder="请选择学历" 
+      bindtap="pickerSelect" name="education" data-field="education" value="{{ education_edit.education }}"/>
+    </view>
+
+    <view class="flex van-hairline--bottom self-row">
+      <view class="self-label">毕业时间</view>
+      <van-field readonly input-align="right" is-link border="{{ false }}" type="text"  placeholder="请选择毕业时间"
+      bindtap="pickerSelect" name="graduation_at" data-field="graduation_at" value="{{ education_edit.graduation_at }}" />
+    </view>
+
+  </view>
+
+  <!-- 工作经历 -->
+  <view wx:if="{{ type === 'work_edit'}}">
+    <view class="flex van-hairline--bottom self-row">
+      <view class="self-label">公司名称</view>
+      <van-field input-align="right" border="{{ false }}" type="text" placeholder="请输入公司名称"
+      maxlength="50" bind:blur="inputBlur" name="company_name" data-field="company_name" value="{{ work_edit.company_name }}"  />
+    </view>
+    <view class="flex van-hairline--bottom self-row">
+      <view class="self-label">职位</view>
+      <van-field input-align="right" border="{{ false }}" type="text" placeholder="请输入职位"
+      maxlength="50" bind:blur="inputBlur" name="job" data-field="job" value="{{ work_edit.job }}"  />
+    </view>
+    <view class="flex van-hairline--bottom self-row">
+      <view class="self-label">入职时间</view>
+      <van-field readonly input-align="right" is-link border="{{ false }}" type="text"  placeholder="请选择入职时间"
+      bindtap="pickerSelect" name="entry_at" data-field="entry_at" value="{{ work_edit.entry_at }}" />
+    </view>
+    <view class="flex van-hairline--bottom self-row">
+      <view class="self-label">离职时间</view>
+      <van-field readonly input-align="right" is-link border="{{ false }}" type="text"  placeholder="请选择离职时间"
+      bindtap="pickerSelect" name="leave_at" data-field="leave_at" value="{{ work_edit.leave_at }}" />
+    </view>
+    <view class="flex van-hairline--bottom self-row">
+      <view class="self-label">工作内容</view>
+    </view>
+    <view class="van-hairline--bottom van-hairline--top">
+      <van-field
+      style="--field-text-area-min-height: 150px"
+      value="{{ work_edit.job_content }}"
+      name="job_content" 
+      data-field="job_content"
+      type="textarea"
+      bind:blur="inputBlur"
+      placeholder="请输入工作内容"
+      border="{{ false }}"
+      maxlength="500"
+      show-word-limit
+    />
+    </view>
+  </view>
+
+  <!-- 项目信息 -->
+  <view wx:if="{{ type === 'project_edit'}}">
+    <view class="flex van-hairline--bottom self-row">
+      <view class="self-label">项目名称</view>
+      <van-field input-align="right" border="{{ false }}" type="text" placeholder="请输入项目名称"
+      maxlength="50" bind:blur="inputBlur" name="project_name" data-field="project_name" value="{{ project_edit.project_name }}"  />
+    </view>
+
+    <view class="flex van-hairline--bottom self-row">
+      <view class="self-label">项目地址</view>
+      <van-field input-align="right" border="{{ false }}" type="text" placeholder="请输入项目地址"
+      maxlength="50" bind:blur="inputBlur" name="link_url" data-field="link_url" value="{{ project_edit.link_url }}"  />
+    </view>
+
+    <view class="flex van-hairline--bottom self-row">
+      <view class="self-label">主要职责</view>
+      <van-field input-align="right" border="{{ false }}" type="text" placeholder="请输入主要职责"
+      maxlength="50" bind:blur="inputBlur" name="job" data-field="job" value="{{ project_edit.job }}"  />
+    </view>
+
+    <view class="flex van-hairline--bottom self-row">
+      <view class="self-label">开始时间</view>
+      <van-field readonly input-align="right" is-link border="{{ false }}" type="text"  placeholder="请选择开始时间"
+      bindtap="pickerSelect" name="begin_at" data-field="begin_at" value="{{ project_edit.begin_at }}" />
+    </view>
+
+    <view class="flex van-hairline--bottom self-row">
+      <view class="self-label">结束时间</view>
+      <van-field readonly input-align="right" is-link border="{{ false }}" type="text"  placeholder="请选择结束时间"
+      bindtap="pickerSelect" name="end_at" data-field="end_at" value="{{ project_edit.end_at }}" />
+    </view>
+    
+    <view class="flex van-hairline--bottom self-row">
+      <view class="self-label">项目成果</view>
+    </view>
+
+    <view class="van-hairline--bottom van-hairline--top">
+      <van-field
+      style="--field-text-area-min-height: 150px"
+      value="{{ project_edit.project_content }}"
+      name="project_content" 
+      data-field="project_content"
+      type="textarea"
+      bind:blur="inputBlur"
+      placeholder="请输入项目成果"
+      border="{{ false }}"
+      maxlength="500"
+      show-word-limit
+    />
+    </view>
+  </view>
+
+  <!-- 技能信息 -->
+  <view wx:if="{{ type === 'skill_edit'}}">
+    <view class="flex van-hairline--bottom self-row">
+      <view class="self-label">技能名称</view>
+      <van-field input-align="right" border="{{ false }}" type="text" placeholder="请输入技能名称"
+      maxlength="50" bind:blur="inputBlur" name="skill_name" data-field="skill_name" value="{{ skill_edit.skill_name }}"  />
+    </view>
+
+    <view class="flex van-hairline--bottom self-row">
+      <view class="self-label">熟练等级</view>
+      <van-field readonly is-link input-align="right" border="{{ false }}" type="text" placeholder="请选择熟练等级" 
+      bindtap="pickerSelect" name="skill_level" data-field="skill_level" value="{{ skill_edit.skill_level }}"/>
+    </view>
+
+  </view>
+
+  <view wx:if="{{ type === 'certificate_edit'}}">
+    <view class="flex van-hairline--bottom self-row">
+      <view class="self-label">证书名称</view>
+      <van-field input-align="right" border="{{ false }}" type="text" placeholder="请输入证书名称"
+      maxlength="50" bind:blur="inputBlur" name="certificate_name" data-field="certificate_name" value="{{ certificate_edit.certificate_name }}"  />
+    </view>
+
+    <view class="flex van-hairline--bottom self-row">
+      <view class="self-label">获取时间</view>
+      <van-field readonly input-align="right" is-link border="{{ false }}" type="text"  placeholder="请选择获取时间"
+      bindtap="pickerSelect" name="certificate_at" data-field="certificate_at" value="{{ certificate_edit.certificate_at }}" />
+    </view>
+
+  </view>
+
+
+  <view style="height: 60rpx;"></view>
+  <van-button
+    formType="submit"
+    wx:if="{{ type !== 'education' && type !== 'project'  && type !== 'work' && type !== 'skill' && type !== 'certificate' }}" 
+    style="{{themeObj.button[theme]}}" 
+    type="default"
+    block>
+    保存
+  </van-button>
+</form>
+
+

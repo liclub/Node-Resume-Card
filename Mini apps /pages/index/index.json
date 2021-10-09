@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "nav-bar": "../../components/nav-bar/nav-bar",
+    "resume-card": "../../components/resume-card/resume-card",
+    "nav-btn": "../../components/nav-btn/nav-btn",
+    "nav-tabbar": "../../components/nav-tabbar/nav-tabbar"
+  }
+}

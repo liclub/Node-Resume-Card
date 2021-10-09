@@ -1,0 +1,4 @@
+.van-nav-bar__arrow {
+  font-size: 30rpx !important;
+  color: #fff !important;
+}

@@ -1,0 +1,18 @@
+/**app.wxss**/
+@import '/miniprogram_npm/@vant/weapp/common/index.wxss';
+@import "./common/css/common.wxss";
+@import "./common/css/iconfont/iconfont.wxss";
+
+.van-field__control, .van-field__label {
+  font-size: 26rpx !important;
+}
+
+.van-cell__right-icon-wrap {
+  color: #d3d3d3 !important;
+}
+
+.van-action-sheet__cancel, 
+.van-action-sheet__item{
+  font-size: 26rpx !important;
+  font-weight: normal;
+}

@@ -1,0 +1,9 @@
+<!--index.wxml-->
+<canvas style="width: 339px;height: 430px;margin-top:1500rpx;position: fixed;top: -10000px" canvas-id="share_canvas"></canvas>
+<nav-bar theme="{{theme}}"></nav-bar>
+<view class="container">
+  <resume-card theme="{{theme}}" resume_base="{{ resumeBase }}"></resume-card>
+  <nav-btn theme="{{theme}}" bind:shareMenu="shareMenu"></nav-btn>
+</view>
+<nav-tabbar theme="{{theme}}" active= "{{ active }}"></nav-tabbar>
+<van-toast id="van-toast" />

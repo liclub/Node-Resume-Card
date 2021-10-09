@@ -1,0 +1,28 @@
+<!--index.wxml-->
+<nav-bar left_arrow="true" theme="{{theme}}" navTitle="邮件发送"></nav-bar>
+<view class="container">
+  <view class="slot-title">邮件发送</view>
+  <view class="slot-desc van-hairline--bottom">
+    使用系统邮箱，将简历以邮件的形式发出，注意：邮件无法撤回，建议先发送到自己的邮箱，再转发，请确认您要发送的邮箱地址，以及标题。个别邮箱设置了严格的垃圾邮件过滤功能，如果收不到邮件，请查看是否被自动丢进了垃圾箱。
+  </view>
+  <view class="self-basic-info">
+    <form bindsubmit="sendEmail">
+      <view class="email-box">
+        <van-field input-align="right" name="email"  value="{{ sendItem.email }}" label="收件人" placeholder="请输入邮箱地址" bind:blur="inputBlur" data-field="email" />
+        <van-field input-align="right" name="title" value="{{ sendItem.title }}" label="标题"  placeholder="请输入标题" bind:blur="inputBlur" data-field="title" />
+        <van-field is-link readonly input-align="right" name="tpl" bindtap="pickerSelect" value="{{ sendItem.tpl }}" label="简历模板" border="{{ false }}" placeholder="请选择简历模板" />
+      </view>
+      <view class="email-desc">注意：如果您是直接发送给用人单位，请仔细阅读对方的邮件标题要求，如果没有，建议标题为：职位名称-姓名-工作地点</view>
+      <van-button disabled="{{!canSend}}" class="save_btn" formType="submit" type="primary" block> 确认发送邮件 </van-button>
+    </form>
+  </view>
+</view>
+
+<resume-popup pop_show="{{ popShow }}">
+  <view slot="popup-slot">
+    <resume-picker title="请选择模板" columns="{{ tplColumns }}" 
+    bind:pickerCancel="pickerCancel" bind:pickerCheck="pickerCheck">
+  </resume-picker>
+  </view>
+</resume-popup>
+<van-toast id="van-toast" />

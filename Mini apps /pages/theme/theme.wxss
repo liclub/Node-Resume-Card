@@ -1,0 +1,54 @@
+.area {
+  width: 80%;
+  margin-left: 10%;
+  margin-top: 50rpx;
+  height: 400rpx;
+  border-radius: 20rpx;
+  position: relative;
+}
+
+.default {
+  background: #fafafa;
+}
+
+.theme1 {
+  background: #55aef2;
+}
+
+.theme2 {
+  background: #ee5c43;
+}
+
+.theme3 {
+  background: #f48435;
+}
+
+.theme4 {
+  background: #3ca068;
+}
+
+.circle {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 100%;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -ms-border-radius: 100%;
+  -o-border-radius: 100%;
+  position: absolute;
+  left: 50rpx;
+  top: 50rpx;
+  background: #fff;
+}
+
+.theme-name {
+  margin-left: 5%;
+  padding-top: 50rpx;
+  text-align: center;
+  width: 90%;
+  margin-right: 5%;
+}
+
+.check-text {
+  color: red
+}

@@ -1,0 +1,21 @@
+<!--index.wxml-->
+<nav-bar left_arrow="true" theme="{{theme}}" navTitle="简历下载"></nav-bar>
+<view class="container">
+  <view class="slot-title">生成文件</view>
+  <view class="slot-desc van-hairline--bottom">
+    将简历生成PDF文件，查看文件可以点击右上角直接发送给好友。PDF文件无法直接保存到手机，可以复制链接，在网页浏览器打开，或者以附件的形式发送邮件。
+  </view>
+  <view class="self-basic-info">
+    <view class="addbtn top-20" style="{{themeObj[theme]}}" bindtap="createHtmlToPdf">新建文件生成任务</view>
+    <view class="pdf_box" wx:for="{{ pdfList }}" wx:key="index">
+      <view class="pdf_title">模板{{item.tpl_type}}</view>
+      <view class="pdf_des van-hairline--bottom">{{item.updated_at}}</view>  
+      <view class="flex pdf_btn">
+        <view bindtap="copyPdf" data-link="{{item.pdf_link}}" class="pdf_btn_self">复制链接</view>
+        <view bindtap="lookPdf" data-link="{{item.pdf_link}}" class="pdf_btn_self">查看文件</view>
+        <!-- <span class="iconfont icon-diandiandian flex-1"></span> -->
+      </view>
+    </view>
+  </view>
+</view>
+<van-toast id="van-toast" />

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Object.defineProperty 监听对象属性变化</title>
+    </head>
+
+    <body>
+      <script type="text/javascript">
+        // 通过Object.defineProperty 发布订阅者模式监听对象属性变化
+        let vueObj = { version : '', status: true, use: { mobile: true, pc: true } };
+        let ODFunction = (obj) => {
+          for (let key of Object.keys(obj)) {
+            if (typeof obj[key] === 'object') {
+              ODFunction(obj[key]);
+              return;
+            }
+            Object.defineProperty(obj, key, {
+              get: () => {
+                console.log('OD GET');
+                return obj[key];
+              },
+              set: (newVal) => {
+                  if (obj[key] === newVal) {
+                    return;
+                  }
+                  console.log('OD SET');
+                  console.log('修改后'+ key +'值：' + newVal);
+                  obj[key] = newVal;
+              }
+          })
+          }
+        }
+        ODFunction(vueObj);
+        vueObj.version = "3.0"
+
+        // 通过proxy 监听整个对象
+        let personObj = { age: '', name: '' };
+        let personProxy = new Proxy(personObj, {
+          get: (target, key) => {
+            console.log('PROXY-' + key + '-PROXY GET');
+            return target[key];
+          },
+          set: (target, key, newValue) => {
+            console.log('PROXY-' + key + '-PROXY SET');
+            if (target[key] === newValue) {
+              return;
+            }
+            target[key] = newValue;
+          }
+        })
+        personProxy.age = "27";
+        personProxy.name = 'yonnelee'
+        console.log(personProxy);
+      </script>
+    </body>
+</html>

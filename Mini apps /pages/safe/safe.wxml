@@ -1,0 +1,33 @@
+<!--index.wxml-->
+<nav-bar left_arrow="true" theme="{{theme}}" navTitle="简历安全"></nav-bar>
+<view class="container">
+  <view class="slot-title">简历安全</view>
+  <view class="slot-desc van-hairline--bottom">
+    根据需要设置安全相关内容，用于确保简历不会被意外泄露
+  </view>
+  <view class="self-basic-info">
+    <form bindsubmit="safeConfig">
+      <view class="email-box">
+        <van-field input-align="right" name="password"  value="{{ safeItem.password }}" label="查阅密码" placeholder="留空表示不需要密码" bind:blur="inputBlur" data-field="password" type="password" />
+        <van-field border="{{ false }}" readonly is-link input-align="right" name="share" bindtap="pickerSelect"  value="{{ safeItem.share }}" label="允许转发"  placeholder="请选择是否允许转发" bind:blur="inputBlur" data-field="share" />
+        <!-- <van-field readonly is-link input-align="right" name="tpl" bindtap="pickerSelect" value="{{ safeItem.collection }}" label="允许收藏" border="{{ false }}" placeholder="请选择是否允许收藏" data-field="collection"/> -->
+      </view>
+      <view class="email-desc">
+        注意：
+        <view>1.设置密码后，其他用户查看需要输入密码。</view>
+        <view>2.不允许转发，只有自己可以通过小程序转发简历。</view>
+        <!-- <view>3.不允许收藏，其他用户无法主动收藏我的简历</view> -->
+      </view>
+      <van-button disabled="{{!canSend}}" class="save_btn" formType="submit" type="primary" block> 保存设置 </van-button>
+    </form>
+  </view>
+</view>
+
+<resume-popup pop_show="{{ popShow }}">
+  <view slot="popup-slot">
+    <resume-picker title="请选择" columns="{{ tplColumns }}" 
+    bind:pickerCancel="pickerCancel" bind:pickerCheck="pickerCheck">
+  </resume-picker>
+  </view>
+</resume-popup>
+<van-toast id="van-toast" />

@@ -1,0 +1,29 @@
+@import '../baseInfo/baseInfo.wxss';
+
+.email-box {
+  border: 1px solid #c8c9c8;
+  border-radius: 10rpx;
+  -webkit-border-radius: 10rpx;
+  -moz-border-radius: 10rpx;
+  -ms-border-radius: 10rpx;
+  -o-border-radius: 10rpx;
+  padding: 10rpx;
+}
+
+.email-desc {
+  font-size: 20rpx;
+  padding: 10rpx;
+  color: #c8c9c8;
+}
+
+
+.save_btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 60rpx;
+}
+
+page {
+  overflow: hidden;
+}

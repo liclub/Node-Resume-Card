@@ -1,0 +1,9 @@
+<van-action-sheet
+  round
+  close-on-click-action
+  show="{{ sheet_show }}"
+  cancel-text="取消"
+  actions="{{ actions }}"
+  bind:cancel="sheetCancel"
+  bind:select="sheetSelect"
+/>

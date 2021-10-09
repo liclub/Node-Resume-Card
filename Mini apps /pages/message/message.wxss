@@ -1,0 +1,28 @@
+page {
+  background: #d6d6d6;
+}
+.message-box {
+  border: 1px solid #cacaca;
+  border-radius: 20rpx;
+  -webkit-border-radius: 20rpx;
+  -moz-border-radius: 20rpx;
+  -ms-border-radius: 20rpx;
+  -o-border-radius: 20rpx;
+  background: #fff;
+  padding: 10rpx 20rpx;
+  width: 85%;
+  margin: 20rpx 5%;
+}
+.message-time {
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 26rpx;
+  color: #d6d6d6;
+  margin: 0 20rpx;
+}
+
+.message-desc {
+  margin: 0 20rpx;
+  font-size: 26rpx;
+  line-height: 60rpx;
+}

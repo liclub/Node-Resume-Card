@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "nav-bar": "../../components/nav-bar/nav-bar",
+    "resume-card": "../../components/resume-card/resume-card",
+    "resume-header": "../../components/resume-header/resume-header",
+    "action-sheet": "../../components/action-sheet/action-sheet"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "nav-bar": "../../components/nav-bar/nav-bar",
+    "resume-info-list": "../../components/resume-info-list/resume-info-list",
+    "resume-info": "../../components/resume-info/resume-info"
+  }
+}

@@ -1,0 +1,23 @@
+.education-box {
+  background: #fafafa;
+  border-radius: 10rpx;
+  padding: 20rpx;
+  line-height: 50rpx;
+  margin: 30rpx 0;
+  font-size: 28rpx;
+}
+
+.icon-diandiandian {
+  font-size: 37rpx;
+}
+
+.edu-info {
+  color: rgb(125,125,125);
+}
+
+.addbtn{
+  display: inline-block;
+  padding: 5rpx 20rpx;
+  border-radius: 10rpx;
+  font-size: 28rpx;
+}
